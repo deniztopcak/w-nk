@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIINK Yönlendirme</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=io.wiink.android.app&pli=1";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/tr/app/wiink/id1163676130?l=tr";
+            } else {
+                document.getElementById('links').style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToStore()" style="text-align: center; font-family: Arial, sans-serif;">
+    <h1>WIINK Uygulamasına Yönlendiriliyorsunuz...</h1>
+    <div id="links" style="display: none; margin-top: 20px;">
+        <p>Bağlantıyı tıklayarak uygulamayı yükleyin:</p>
+        <a href="https://apps.apple.com/tr/app/wiink/id1163676130?l=tr" 
+           style="display: block; margin: 10px; text-decoration: none; color: #007aff;">
+           ➡ iOS için WIINK</a>
+        <a href="https://play.google.com/store/apps/details?id=io.wiink.android.app&pli=1" 
+           style="display: block; margin: 10px; text-decoration: none; color: #34a853;">
+           ➡ Android için WIINK</a>
+    </div>
+</body>
+</html>
